@@ -16,9 +16,14 @@ class SchoolClassAdapter: RecyclerView.Adapter<SchoolClassAdapter.SchoolClassVie
             notifyDataSetChanged()
         }
 
+    var onItemClicked: (id: Int) -> Unit = {_ ->}
+
     inner class SchoolClassViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         fun populateModel(model: Rezultat?){
             itemView.tvName.text = HtmlCompat.fromHtml(model?.title!!, HtmlCompat.FROM_HTML_MODE_COMPACT)
+            itemView.setOnClickListener{
+                onItemClicked.invoke(model.id)
+            }
         }
     }
 

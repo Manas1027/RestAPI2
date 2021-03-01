@@ -1,5 +1,6 @@
 package com.example.restapi2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -19,8 +20,14 @@ class MainActivity : AppCompatActivity(), NetworkListener {
         mList.adapter = adapter
         mList.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
         networkHelper = NetworkHelper(ApiClient.getClient())
+        adapter.onItemClicked = { id ->
+            val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("id", id)
+            startActivity(intent)
+        }
         setData()
     }
+
 
     private fun setData(){
         networkHelper.getClasses(this, "Fefer_Ivan")

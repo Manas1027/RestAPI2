@@ -1,6 +1,6 @@
 package com.example.restapi2.model
 
-data class SchoolClass(
+data class MyResponse2(
     val status: String,
-    val result: List<Rezultat>
+    val result: List<Comment>
 )
