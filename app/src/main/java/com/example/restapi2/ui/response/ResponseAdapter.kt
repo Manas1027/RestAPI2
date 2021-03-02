@@ -1,4 +1,4 @@
-package com.example.restapi2.ui
+package com.example.restapi2.ui.response
 
 import android.view.LayoutInflater
 import android.view.View

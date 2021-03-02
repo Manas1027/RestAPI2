@@ -1,10 +1,9 @@
-package com.example.restapi2.ui
+package com.example.restapi2.ui.comments
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.text.HtmlCompat
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
 import com.example.restapi2.R
 import com.example.restapi2.model.Comment
