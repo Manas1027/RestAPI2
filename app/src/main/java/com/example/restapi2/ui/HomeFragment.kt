@@ -24,6 +24,7 @@ class HomeFragment: Fragment(R.layout.fragment_home), NetworkListener {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         (activity as AppCompatActivity?)!!.supportActionBar!!.show()
+        navController = Navigation.findNavController(view)
         mList.adapter = adapter
         mList.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
         networkHelper = NetworkHelper(ApiClient.getClient())

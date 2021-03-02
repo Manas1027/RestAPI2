@@ -16,12 +16,12 @@
     </fragment>
     <fragment
         android:id="@+id/commentFragment"
-        android:name="com.example.restapi2.ui.CommentFragment"
+        android:name="com.example.restapi2.ui.CommentsFragment"
         android:label="CommentFragment"
         tools:layout="@layout/fragment_comments">
         <argument
             android:name="id"
             app:argType="integer"
-            android:defaultValue="0" />
+            android:defaultValue="1" />
     </fragment>
 </navigation>
