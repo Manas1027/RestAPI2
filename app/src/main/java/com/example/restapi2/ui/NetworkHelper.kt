@@ -1,5 +1,7 @@
-package com.example.restapi2
+package com.example.restapi2.ui
 
+import com.example.restapi2.NetworkListener
+import com.example.restapi2.NetworkListener2
 import com.example.restapi2.model.MyResponse
 import com.example.restapi2.model.MyResponse2
 import com.example.restapi2.retrofit.ApiInterface
@@ -33,7 +35,7 @@ class NetworkHelper(private val apiClient: Retrofit) {
                 listener.onCommentsFailure(t?.localizedMessage)
             }
 
-            override fun onResponse(call: Call<MyResponse2?, response: Response<MyResponse2>?) {
+            override fun onResponse(call: Call<MyResponse2?>, response: Response<MyResponse2>?) {
                 listener.onCommentsResponse(response?.body()?.result)
             }
         })

@@ -1,15 +1,17 @@
-package com.example.restapi2
+package com.example.restapi2.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.text.HtmlCompat
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
+import com.example.restapi2.R
 import com.example.restapi2.model.Comment
-import com.example.restapi2.model.Rezultat
 import kotlinx.android.synthetic.main.item.view.*
 
 class CommentsAdapter: RecyclerView.Adapter<CommentsAdapter.CommentsViewHolder>() {
+
 
     var models: List<Comment> = listOf()
         set(value) {

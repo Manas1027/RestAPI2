@@ -1,14 +1,15 @@
-package com.example.restapi2
+package com.example.restapi2.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.text.HtmlCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.restapi2.R
 import com.example.restapi2.model.Rezultat
 import kotlinx.android.synthetic.main.item.view.*
 
-class SchoolClassAdapter: RecyclerView.Adapter<SchoolClassAdapter.SchoolClassViewHolder>() {
+class ResponseAdapter: RecyclerView.Adapter<ResponseAdapter.SchoolClassViewHolder>() {
 
     var models: List<Rezultat> = listOf()
         set(value) {
