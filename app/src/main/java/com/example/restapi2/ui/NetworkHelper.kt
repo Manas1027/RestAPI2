@@ -8,7 +8,7 @@ import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Retrofit
 
-class NetworkHelper(private val view: ResponseView) {
+class NetworkHelper(private val listener: NetworkListener) {
 
     private val apiClient: Retrofit
     //responseHelper = NetworkHelper(ApiClient.getClient())
