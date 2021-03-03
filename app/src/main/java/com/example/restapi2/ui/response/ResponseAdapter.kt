@@ -7,7 +7,7 @@ import androidx.core.text.HtmlCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.restapi2.R
 import com.example.restapi2.model.Rezultat
-import kotlinx.android.synthetic.main.item.view.*
+import kotlinx.android.synthetic.main.item_reponse.view.*
 
 class ResponseAdapter: RecyclerView.Adapter<ResponseAdapter.SchoolClassViewHolder>() {
 
@@ -29,7 +29,7 @@ class ResponseAdapter: RecyclerView.Adapter<ResponseAdapter.SchoolClassViewHolde
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SchoolClassViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_reponse, parent, false)
         return SchoolClassViewHolder(itemView)
     }
 

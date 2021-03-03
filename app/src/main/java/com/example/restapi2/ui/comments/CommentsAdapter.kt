@@ -7,7 +7,7 @@ import androidx.core.text.HtmlCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.restapi2.R
 import com.example.restapi2.model.Comment
-import kotlinx.android.synthetic.main.item.view.*
+import kotlinx.android.synthetic.main.item_comment.view.*
 
 class CommentsAdapter: RecyclerView.Adapter<CommentsAdapter.CommentsViewHolder>() {
 
@@ -23,11 +23,12 @@ class CommentsAdapter: RecyclerView.Adapter<CommentsAdapter.CommentsViewHolder>(
     inner class CommentsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         fun populateModel(model: Comment){
             itemView.tvName.text = HtmlCompat.fromHtml(model.text, HtmlCompat.FROM_HTML_MODE_COMPACT)
+            itemView.handleName.text = model.commentatorHandle
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommentsViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_comment, parent, false)
         return CommentsViewHolder(itemView)
     }
 

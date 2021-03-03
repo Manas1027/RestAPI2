@@ -30,7 +30,7 @@ class CommentsFragment: Fragment(R.layout.fragment_comments), NetworkListener2 {
         navController = Navigation.findNavController(view)
         index = safeArgs.id
         comments.adapter = adapter
-        comments.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
+        //comments.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
         networkHelper = NetworkHelper(ApiClient.getClient())
         setData()
     }
