@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/responseFragment"
         android:name="com.example.restapi2.ui.response.ResponseFragment"
-        android:label="HomeFragment"
+        android:label="ResponseFragment"
         tools:layout="@layout/fragment_response">
         <action
             android:id="@+id/action_homeFragment_to_commentsFragment"
