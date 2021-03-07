@@ -2,24 +2,23 @@ package com.example.restapi2.ui.comments
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.restapi2.*
 import com.example.restapi2.model.Comment
 import com.example.restapi2.retrofit.ApiClient
 import com.example.restapi2.ui.NetworkHelper
+import com.example.restapi2.ui.response.ResponsePresenter
 import kotlinx.android.synthetic.main.fragment_comments.*
 
-class CommentsFragment: Fragment(R.layout.fragment_comments), NetworkListener2 {
+class CommentsFragment: Fragment(R.layout.fragment_comments), CommentsView {
 
     private lateinit var navController: NavController
     private val adapter = CommentsAdapter()
-    lateinit var networkHelper: NetworkHelper
+    lateinit var presenter: CommentsPresenter
     private val safeArgs: CommentsFragmentArgs by navArgs()
     private var index = 0
 
@@ -30,21 +29,20 @@ class CommentsFragment: Fragment(R.layout.fragment_comments), NetworkListener2 {
         navController = Navigation.findNavController(view)
         index = safeArgs.id
         comments.adapter = adapter
-        //comments.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
-        networkHelper = NetworkHelper(ApiClient.getClient())
+        presenter = CommentsPresenter(NetworkHelper(), this)
         setData()
     }
     private fun setData(){
-        networkHelper.getComments(this, index)
+        presenter.getCommentsInfo(index)
     }
 
-    override fun onCommentsResponse(models: List<Comment>?) {
-        if (models != null) {
-            adapter.models = models
-        }
+    override fun setResponseData(commentsList: List<Comment>) {
+        adapter.models = commentsList
     }
 
-    override fun onCommentsFailure(message: String?) {
-        Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+    override fun showMessage(msg: String?) {
+        TODO("Not yet implemented")
     }
+
+
 }

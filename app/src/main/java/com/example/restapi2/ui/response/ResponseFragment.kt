@@ -4,7 +4,6 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -12,9 +11,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.restapi2.*
-import com.example.restapi2.model.MyResponse
 import com.example.restapi2.model.Rezultat
-import com.example.restapi2.retrofit.ApiClient
 import com.example.restapi2.ui.NetworkHelper
 import kotlinx.android.synthetic.main.fragment_response.*
 
@@ -41,12 +38,12 @@ class ResponseFragment: Fragment(R.layout.fragment_response), ResponseView {
             navController.navigate(action)
         }
         presenter = ResponsePresenter(NetworkHelper(), this)
-        getData()
+        setData()
         view.hideKeyboard()
     }
 
 
-    fun getData() {
+    private fun setData() {
         presenter.getResponseInfo("$name")
     }
 
@@ -59,4 +56,9 @@ class ResponseFragment: Fragment(R.layout.fragment_response), ResponseView {
     override fun setResponseData(responseList: List<Rezultat>) {
         adapter.models = responseList
     }
+
+    override fun showMessage(msg: String?) {
+        TODO("Not yet implemented")
+    }
+
 }

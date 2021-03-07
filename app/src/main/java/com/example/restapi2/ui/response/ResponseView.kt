@@ -4,5 +4,6 @@ import com.example.restapi2.model.Rezultat
 
 interface ResponseView {
     fun setResponseData(responseList: List<Rezultat>)
+    fun showMessage(msg: String?)
 
 }

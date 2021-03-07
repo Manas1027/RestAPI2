@@ -24,11 +24,7 @@ class SearchFragment: Fragment(R.layout.fragment_search) {
             val name = etName.text.toString()
             val action = SearchFragmentDirections.actionSearchFragmentToHomeFragment(name)
             navController.navigate(action)
-
-
         }
-
-        KeyEvent.KEYCODE_ENTER
 
     }
 

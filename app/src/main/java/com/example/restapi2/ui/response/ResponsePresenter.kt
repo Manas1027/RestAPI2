@@ -6,6 +6,12 @@ class ResponsePresenter(private val responseHelper: NetworkHelper, private val v
 
 
     fun getResponseInfo(name: String){
-        responseHelper.getResponse(name)
+        responseHelper.getResponse(name,
+                {
+                    view.setResponseData(it)
+                },
+                {
+                    view.showMessage(it)
+                })
     }
 }
